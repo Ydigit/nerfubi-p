@@ -1,0 +1,1 @@
+# This file serves as a placeholder and can be used to document the images used in the project, including their sources and descriptions.

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERFUBI – NeRF Model Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>NERFUBI</h1>
+            <p class="subtitle">Neural Radiance Fields for UAV-Based Infrastructure Mapping</p>
+        </div>
+        <nav>
+            <a href="#images">Images</a>
+            <a href="#videos">Videos</a>
+            <a href="#meshes">Mesh</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="images">
+            <h2>Image Comparisons</h2>
+            <div class="comparison-row">
+                <div>
+                    <h3>Nerfacto</h3>
+                    <img src="images/nerfacto.png" alt="Nerfacto Output">
+                </div>
+                <div>
+                    <h3>Instant-NGP</h3>
+                    <img src="images/instant-ngp.png" alt="Instant-NGP Output">
+                </div>
+                <div>
+                    <h3>NeRF-SH</h3>
+                    <img src="images/nerfsh.png" alt="NeRF-SH Output">
+                </div>
+            </div>
+        </section>
+
+        <section id="videos">
+            <h2>Video Comparisons</h2>
+            <div class="video-comparison-table">
+                <!-- Cabeçalho dos modelos -->
+                <div class="video-row header">
+                    <div> <strong>Nerfacto</strong> </div>
+                    <div> <strong>Instant-NGP</strong> </div>
+                    <div> <strong>NeRF-SH</strong> </div>
+                </div>
+                <!-- Cena 1 -->
+                <div class="video-row">
+                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
+                        <source src="videos/nerfacto6fase_uno.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
+                        <source src="videos/instant-6fase_uno.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
+                        <source src="videos/instant-6fase_uno.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- Cena 2 -->
+                <div class="video-row">
+                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
+                        <source src="videos/nerfactoAviao2Min.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
+                        <source src="videos/instant-Aviao2Min.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
+                        <!-- <source src="videos/nerfsh-Aviao2Min.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
+                <!-- Cena 3 -->
+                <div class="video-row">
+                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
+                        <source src="videos/nerfactoTorre.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
+                        <source src="videos/instant-torrestantonio.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
+                        <!-- <source src="videos/nerfsh-Torre.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
+                <!-- Cena 4 -->
+                <div class="video-row">
+                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
+                        <source src="videos/nerfacoIgreja.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
+                        <source src="videos/instant-igrejaUBI.mp4" type="video/mp4">
+                    </video>
+                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
+                        <!-- <source src="videos/nerfsh-Igreja.mp4" type="video/mp4"> -->
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section id="meshes">
+            <h2>Interactive Mesh Comparison</h2>
+            <div id="mesh-container"></div>
+            <p class="mesh-note">Arraste para rodar, use a roda do rato para zoom.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NERFUBI Project &mdash; <a href="https://github.com/yourusername/nerf-model-comparison-site" target="_blank">GitHub</a></p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.154.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const videosSection = document.getElementById('videos');
+    const videos = videosSection.querySelectorAll('video');
+    let played = false;
+
+    function playAllVideos() {
+        if (played) return;
+        videos.forEach(video => {
+            video.currentTime = 0;
+            video.play();
+        });
+        played = true;
+    }
+
+    // Usa IntersectionObserver para detetar quando a secção aparece no ecrã
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                playAllVideos();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(videosSection);
+});
+</script>
+</body>
+</html>
