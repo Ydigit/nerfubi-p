@@ -1,9 +1,6 @@
-// This file contains JavaScript code for interactivity on the website. 
-// It includes functions to handle user interactions, load images and videos, 
-// and manage the interactive mesh display.
-import * as THREE from './js/three.module.js';
-import { OrbitControls } from './js/OrbitControls.js';
-import { PLYLoader } from './js/PLYLoader.js';
+import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js';
+import { PLYLoader } from 'https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Function to load images dynamically
