@@ -1,6 +1,6 @@
-import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
-import { OrbitControls } from 'https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js';
-import { PLYLoader } from 'https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { PLYLoader } from 'three/examples/jsm/loaders/PLYLoader';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Function to load images dynamically
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         meshContainer.appendChild(renderer.domElement);
 
         // Orbit controls
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        const controls = new OrbitControls(camera, renderer.domElement);
 
         // Ambient light
         scene.add(new THREE.AmbientLight(0xffffff, 1));
