@@ -6,14 +6,14 @@
     <title>NERFUBI – NeRF Model Comparison</title>
     <link rel="stylesheet" href="styles.css">
     <script type="importmap">
-{
-  "imports": {
-    "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
-    "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js",
-    "three/examples/jsm/loaders/PLYLoader": "https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js"
-  }
-}
-</script>
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js",
+        "three/examples/jsm/loaders/PLYLoader": "https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js"
+      }
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -24,7 +24,6 @@
         <nav>
             <a href="#images">Images</a>
             <a href="#videos">Videos</a>
-            <a href="#meshes">Mesh</a>
         </nav>
     </header>
 
@@ -106,19 +105,11 @@
                 </div>
             </div>
         </section>
-
-        <section id="meshes">
-            <h2>Interactive Mesh Comparison</h2>
-            <div id="mesh-container"></div>
-            <p class="mesh-note">Arraste para rodar, use a roda do rato para zoom.</p>
-        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 NERFUBI Project &mdash; <a href="https://github.com/yourusername/nerf-model-comparison-site" target="_blank">GitHub</a></p>
     </footer>
-
-<script type="module" src="scripts.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
