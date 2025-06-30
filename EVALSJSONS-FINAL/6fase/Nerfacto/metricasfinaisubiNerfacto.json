@@ -1,0 +1,17 @@
+{
+  "experiment_name": "6fase_uno",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs\\6fase_uno\\nerfacto\\2025-06-25_004615\\nerfstudio_models\\step-000029999.ckpt",
+  "results": {
+    "psnr": 18.34467124938965,
+    "psnr_std": 2.858323097229004,
+    "ssim": 0.5322272181510925,
+    "ssim_std": 0.14895035326480865,
+    "lpips": 0.45137453079223633,
+    "lpips_std": 0.09452896565198898,
+    "num_rays_per_sec": 142100.25,
+    "num_rays_per_sec_std": 19747.486328125,
+    "fps": 0.2528474032878876,
+    "fps_std": 0.035137876868247986
+  }
+}

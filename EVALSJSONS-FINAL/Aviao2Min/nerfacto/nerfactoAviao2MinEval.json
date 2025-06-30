@@ -1,0 +1,17 @@
+{
+  "experiment_name": "Aviao2Min",
+  "method_name": "nerfacto",
+  "checkpoint": "outputs\\Aviao2Min\\nerfacto\\2025-06-24_130608\\nerfstudio_models\\step-000029999.ckpt",
+  "results": {
+    "psnr": 19.402774810791016,
+    "psnr_std": 1.8233962059020996,
+    "ssim": 0.6170505285263062,
+    "ssim_std": 0.08035168796777725,
+    "lpips": 0.2819911539554596,
+    "lpips_std": 0.06719320267438889,
+    "num_rays_per_sec": 194883.125,
+    "num_rays_per_sec_std": 115070.7109375,
+    "fps": 0.21146172285079956,
+    "fps_std": 0.12485972046852112
+  }
+}

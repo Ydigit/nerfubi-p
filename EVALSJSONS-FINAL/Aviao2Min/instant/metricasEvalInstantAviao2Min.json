@@ -1,0 +1,17 @@
+{
+  "experiment_name": "Aviao2Min",
+  "method_name": "instant-ngp",
+  "checkpoint": "outputs/Aviao2Min/instant-ngp/2025-06-26_133902/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 21.011720657348633,
+    "psnr_std": 2.5247273445129395,
+    "ssim": 0.7085638642311096,
+    "ssim_std": 0.05583786219358444,
+    "lpips": 0.28921058773994446,
+    "lpips_std": 0.056721195578575134,
+    "num_rays_per_sec": 593674.0,
+    "num_rays_per_sec_std": 212165.234375,
+    "fps": 0.6441775560379028,
+    "fps_std": 0.23021401464939117
+  }
+}

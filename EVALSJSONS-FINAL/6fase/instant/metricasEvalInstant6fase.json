@@ -1,0 +1,17 @@
+{
+  "experiment_name": "6fase_uno",
+  "method_name": "instant-ngp",
+  "checkpoint": "outputs/6fase_uno/instant-ngp/2025-06-26_133902/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 20.393566131591797,
+    "psnr_std": 3.6429026126861572,
+    "ssim": 0.6469900012016296,
+    "ssim_std": 0.1241350769996643,
+    "lpips": 0.4517466425895691,
+    "lpips_std": 0.0897957980632782,
+    "num_rays_per_sec": 239514.015625,
+    "num_rays_per_sec_std": 28982.8515625,
+    "fps": 0.42618152499198914,
+    "fps_std": 0.05157090723514557
+  }
+}

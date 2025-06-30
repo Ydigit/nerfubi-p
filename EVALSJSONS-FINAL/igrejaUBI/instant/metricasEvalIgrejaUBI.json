@@ -1,0 +1,17 @@
+{
+  "experiment_name": "igrejaUBI",
+  "method_name": "instant-ngp",
+  "checkpoint": "outputs/igrejaUBI/instant-ngp/2025-06-26_133902/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 22.265506744384766,
+    "psnr_std": 1.2636065483093262,
+    "ssim": 0.7219768166542053,
+    "ssim_std": 0.0327143520116806,
+    "lpips": 0.23292593657970428,
+    "lpips_std": 0.04224434867501259,
+    "num_rays_per_sec": 588163.75,
+    "num_rays_per_sec_std": 127742.984375,
+    "fps": 1.046554684638977,
+    "fps_std": 0.22730068862438202
+  }
+}

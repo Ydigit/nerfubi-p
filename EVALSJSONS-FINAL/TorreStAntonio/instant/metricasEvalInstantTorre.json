@@ -1,0 +1,17 @@
+{
+  "experiment_name": "TorreStAntonio",
+  "method_name": "instant-ngp",
+  "checkpoint": "outputs/TorreStAntonio/instant-ngp/2025-06-26_133902/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 26.962743759155273,
+    "psnr_std": 2.09485125541687,
+    "ssim": 0.8318396210670471,
+    "ssim_std": 0.03754178807139397,
+    "lpips": 0.13269425928592682,
+    "lpips_std": 0.022809375077486038,
+    "num_rays_per_sec": 535345.4375,
+    "num_rays_per_sec_std": 69528.171875,
+    "fps": 1.032688021659851,
+    "fps_std": 0.13412070274353027
+  }
+}

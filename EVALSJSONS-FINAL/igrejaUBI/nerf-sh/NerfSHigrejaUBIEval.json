@@ -1,0 +1,17 @@
+{
+  "experiment_name": "igrejaUBI",
+  "method_name": "nerfsh",
+  "checkpoint": "outputs/igrejaUBI/nerfsh/2025-06-27_002447/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 21.684017181396484,
+    "psnr_std": 2.0473358631134033,
+    "ssim": 0.7303215265274048,
+    "ssim_std": 0.01593678817152977,
+    "lpips": 0.16887301206588745,
+    "lpips_std": 0.023840084671974182,
+    "num_rays_per_sec": 341090.625,
+    "num_rays_per_sec_std": 40829.0078125,
+    "fps": 0.6069228649139404,
+    "fps_std": 0.07264947146177292
+  }
+}

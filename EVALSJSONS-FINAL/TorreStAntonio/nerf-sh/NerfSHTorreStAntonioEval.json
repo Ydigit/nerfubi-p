@@ -1,0 +1,17 @@
+{
+  "experiment_name": "TorreStAntonio",
+  "method_name": "nerfsh",
+  "checkpoint": "outputs/TorreStAntonio/nerfsh/2025-06-26_234815/nerfstudio_models/step-000029999.ckpt",
+  "results": {
+    "psnr": 29.13962173461914,
+    "psnr_std": 2.2128078937530518,
+    "ssim": 0.9390981197357178,
+    "ssim_std": 0.009275203570723534,
+    "lpips": 0.03394906967878342,
+    "lpips_std": 0.0067879981361329556,
+    "num_rays_per_sec": 366942.21875,
+    "num_rays_per_sec_std": 17532.240234375,
+    "fps": 0.7078360915184021,
+    "fps_std": 0.033819910138845444
+  }
+}
