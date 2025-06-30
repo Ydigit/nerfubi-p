@@ -1,61 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>NERFUBI – Comparação de Imagens</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>NERFUBI – Comparação de Imagens</title>
+  <style>
+    body {
+      background: #1f2327;
+      color: #e0e0e0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 2em 1em 1em;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      color: #77e4ff;
+      margin-bottom: 0.2em;
+    }
+
+    .subtitle {
+      color: #9fdfff;
+      font-size: 1.2em;
+    }
+
+    nav {
+      margin-top: 0.5em;
+    }
+
+    nav a {
+      color: #77e4ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.6em;
+      color: #aeeaff;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3em;
+      margin-bottom: 1em;
+    }
+
+    .comparison-table {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      max-width: 96vw;
+      margin: 0 auto;
+      padding: 0 1em 3em;
+    }
+
+    .comparison-row {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 1.2em;
+      background: #2a2e31;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #0005;
+    }
+
+    .comparison-row > div {
+      flex: 0 1 30%;
+      text-align: center;
+    }
+
+    .comparison-row img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #444;
+      box-shadow: 0 1px 6px #0006;
+      background: #222;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .comparison-row img:hover {
+      transform: scale(1.03);
+    }
+
+    .model-label {
+      margin-top: 0.6em;
+      font-size: 1.1em;
+      color: #9fdfff;
+    }
+
+    .scene-label {
+      text-align: center;
+      margin-top: 1em;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #ffd700;
+      letter-spacing: 0.8px;
+    }
+
+    @media (max-width: 1000px) {
+      .comparison-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .comparison-row > div {
+        width: 95vw;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>NERFUBI</h1>
-            <p class="subtitle">Comparação de Imagens dos Modelos</p>
+  <header>
+    <h1>NERFUBI</h1>
+    <p class="subtitle">Comparação de Imagens dos Modelos</p>
+    <nav><a href="index.html">Videos</a></nav>
+  </header>
+
+  <main>
+    <h2>Comparação de Imagens</h2>
+    <div class="comparison-table">
+
+      <!-- 6fase-13 -->
+      <div class="comparison-row">
+        <div>
+          <img src="images/nerfacto-6fase-13.png" alt="Nerfacto 6fase-13">
+          <div class="model-label">Nerfacto</div>
         </div>
-        <nav>
-            <a href="index.html">Voltar</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Comparação de Imagens</h2>
-        <div class="comparison-table">
-            <!-- Exemplo de linha de comparação -->
-            <div class="comparison-row">
-                <div>
-                    <img src="images/nerfacto-cena1.png" alt="Nerfacto Cena 1">
-                    <p>Nerfacto</p>
-                </div>
-                <div>
-                    <img src="images/instant-ngp-cena1.png" alt="Instant-NGP Cena 1">
-                    <p>Instant-NGP</p>
-                </div>
-                <div>
-                    <img src="images/nerfsh-cena1.png" alt="NeRF-SH Cena 1">
-                    <p>NeRF-SH</p>
-                </div>
-                <div class="cen-label">
-                    <p>Cena 1</p>
-                </div>
-            </div>
-            <!-- Repete para cada cena -->
-            <div class="comparison-row">
-                <div>
-                    <img src="images/nerfacto-cena2.png" alt="Nerfacto Cena 2">
-                    <p>Nerfacto</p>
-                </div>
-                <div>
-                    <img src="images/instant-ngp-cena2.png" alt="Instant-NGP Cena 2">
-                    <p>Instant-NGP</p>
-                </div>
-                <div>
-                    <img src="images/nerfsh-cena2.png" alt="NeRF-SH Cena 2">
-                    <p>NeRF-SH</p>
-                </div>
-                <div class="cen-label">
-                    <p>Cena 2</p>
-                </div>
-            </div>
-            <!-- Adiciona mais linhas conforme necessário -->
+        <div>
+          <img src="images/instant-6fase-13.png" alt="Instant-NGP 6fase-13">
+          <div class="model-label">Instant-NGP</div>
         </div>
-    </main>
+        <div>
+          <img src="images/nerfsh-6fase-13.png" alt="NeRF-SH 6fase-13">
+          <div class="model-label">NeRF-SH</div>
+        </div>
+      </div>
+      <div class="scene-label">6fase-13</div>
+
+      <!-- aviao-08 -->
+      <div class="comparison-row">
+        <div>
+          <img src="images/nerfacto-aviao-08.png" alt="Nerfacto aviao-08">
+          <div class="model-label">Nerfacto</div>
+        </div>
+        <div>
+          <img src="images/instant-aviao-08.png" alt="Instant-NGP aviao-08">
+          <div class="model-label">Instant-NGP</div>
+        </div>
+        <div>
+          <img src="images/nerfsh-aviao-08.png" alt="NeRF-SH aviao-08">
+          <div class="model-label">NeRF-SH</div>
+        </div>
+      </div>
+      <div class="scene-label">aviao-08</div>
+
+      <!-- igreja-05 -->
+      <div class="comparison-row">
+        <div>
+          <img src="images/nerfacto-igreja-05.png" alt="Nerfacto igreja-05">
+          <div class="model-label">Nerfacto</div>
+        </div>
+        <div>
+          <img src="images/instant-igreja-05.png" alt="Instant-NGP igreja-05">
+          <div class="model-label">Instant-NGP</div>
+        </div>
+        <div>
+          <img src="images/nerfsh-igreja-05.png" alt="NeRF-SH igreja-05">
+          <div class="model-label">NeRF-SH</div>
+        </div>
+      </div>
+      <div class="scene-label">igreja-05</div>
+
+      <!-- tprre-09 -->
+      <div class="comparison-row">
+        <div>
+          <img src="images/nerfacto-tprre-09.png" alt="Nerfacto torre-09">
+          <div class="model-label">Nerfacto</div>
+        </div>
+        <div>
+          <img src="images/instant-torre-09.png" alt="Instant-NGP torre-09">
+          <div class="model-label">Instant-NGP</div>
+        </div>
+        <div>
+          <img src="images/nerfsh-torre-09.png" alt="NeRF-SH torre-09">
+          <div class="model-label">NeRF-SH</div>
+        </div>
+      </div>
+      <div class="scene-label">torre-09</div>
+
+    </div>
+  </main>
 </body>
 </html>
