@@ -3,126 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>NERFUBI – Comparação de Imagens</title>
-  <style>
-    body {
-      background: #1f2327;
-      color: #e0e0e0;
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
+  <link rel="stylesheet" href="img.css">
 
-    header {
-      text-align: center;
-      padding: 2em 1em 1em;
-    }
-
-    h1 {
-      font-size: 2.4em;
-      color: #77e4ff;
-      margin-bottom: 0.2em;
-    }
-
-    .subtitle {
-      color: #9fdfff;
-      font-size: 1.2em;
-    }
-
-    nav {
-      margin-top: 0.5em;
-    }
-
-    nav a {
-      color: #77e4ff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 1.6em;
-      color: #aeeaff;
-      border-bottom: 1px solid #333;
-      padding-bottom: 0.3em;
-      margin-bottom: 1em;
-    }
-
-    .comparison-table {
-      display: flex;
-      flex-direction: column;
-      gap: 2em;
-      max-width: 96vw;
-      margin: 0 auto;
-      padding: 0 1em 3em;
-    }
-
-    .comparison-row {
-      display: flex;
-      justify-content: center;
-      gap: 2em;
-      padding: 1.2em;
-      background: #2a2e31;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px #0005;
-    }
-
-    .comparison-row > div {
-      flex: 0 1 30%;
-      text-align: center;
-    }
-
-    .comparison-row img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      border: 1px solid #444;
-      box-shadow: 0 1px 6px #0006;
-      background: #222;
-      object-fit: contain;
-      transition: transform 0.2s ease;
-    }
-
-    .comparison-row img:hover {
-      transform: scale(1.03);
-    }
-
-    .model-label {
-      margin-top: 0.6em;
-      font-size: 1.1em;
-      color: #9fdfff;
-    }
-
-    .scene-label {
-      text-align: center;
-      margin-top: 1em;
-      font-size: 1.3em;
-      font-weight: bold;
-      color: #ffd700;
-      letter-spacing: 0.8px;
-    }
-
-    @media (max-width: 1000px) {
-      .comparison-row {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .comparison-row > div {
-        width: 95vw;
-      }
-    }
-  </style>
 </head>
 <body>
   <header>
-    <h1>NERFUBI</h1>
-    <nav><a href="index.html">Videos</a></nav>
-  </header>
+        <div class="header-content">
+            <h1>NERFUBI</h1>
+            <p class="subtitle">Neural Radiance Fields for UAV-Based Infrastructure Mapping</p>
+        </div>
+
+        <nav>
+            <a href="images.html" target="_blank">Images</a>
+            <a href="index.html">Videos</a>
+            <a href="49731_66.pdf" download>Download PDF </a>
+
+        </nav>
+
+
+    </header>
 
   <main>
     <h2>Image Comparison</h2>
     <div class="comparison-table">
 
       <!-- 6fase-13 -->
+      <div class="scene-label">6fase-13</div>
       <div class="comparison-row">
         <div>
           <img src="images/nerfacto-6fase-13.png" alt="Nerfacto 6fase-13">
@@ -137,9 +43,9 @@
           <div class="model-label">NeRF-SH</div>
         </div>
       </div>
-      <div class="scene-label">6fase-13</div>
 
       <!-- aviao-08 -->
+      <div class="scene-label">aviao-08</div>
       <div class="comparison-row">
         <div>
           <img src="images/nerfacto-aviao-08.png" alt="Nerfacto aviao-08">
@@ -154,9 +60,9 @@
           <div class="model-label">NeRF-SH</div>
         </div>
       </div>
-      <div class="scene-label">aviao-08</div>
-
+      
       <!-- igreja-05 -->
+      <div class="scene-label">igreja-05</div>
       <div class="comparison-row">
         <div>
           <img src="images/nerfacto-igreja-05.png" alt="Nerfacto igreja-05">
@@ -171,9 +77,9 @@
           <div class="model-label">NeRF-SH</div>
         </div>
       </div>
-      <div class="scene-label">igreja-05</div>
 
       <!-- tprre-09 -->
+      <div class="scene-label">torre-09</div>
       <div class="comparison-row">
         <div>
           <img src="images/nerfacto-tprre-09.png" alt="Nerfacto torre-09">
@@ -188,9 +94,12 @@
           <div class="model-label">NeRF-SH</div>
         </div>
       </div>
-      <div class="scene-label">torre-09</div>
 
     </div>
   </main>
+    <footer>
+        <p>&copy; 2025 NERFUBI Project &mdash; <a href="https://github.com/Ydigit" target="_blank">GitHub</a></p>
+    </footer>
 </body>
+
 </html>

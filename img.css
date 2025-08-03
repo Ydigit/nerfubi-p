@@ -1,0 +1,162 @@
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #181a1b;
+    color: #f2f2f2;
+}
+header {
+    background: #23272a;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+    border-bottom: 2px solid #31363b;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #90e0ef;
+}
+
+.subtitle {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.1rem;
+    color: #b0bfcf;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #90e0ef;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #48cae4;
+}
+
+
+
+
+footer {
+    background: #23272a;
+    color: #b0bfcf;
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 2rem;
+    font-size: 1em;
+}
+
+footer a {
+    color: #90e0ef;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2em; /* espaçamento entre links */
+    margin-top: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #aeeaff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
+h1 {
+      font-size: 2.4em;
+      color: #77e4ff;
+      margin-bottom: 0.2em;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.6em;
+      color: #aeeaff;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.3em;
+      margin-bottom: 1em;
+    }
+
+
+    .comparison-table {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      max-width: 96%;
+      margin: 0 auto;
+      padding: 0em;
+    }
+
+    .comparison-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0em;
+      padding: 1.2em;
+      background: #2a2e31;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #0005;
+    }
+
+    .comparison-row > div {
+      flex: 1;
+      text-align: center;
+    }
+
+    .comparison-row img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #444;
+      box-shadow: 0 1px 6px #0006;
+      background: #222;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .comparison-row img:hover {
+      transform: scale(1.01);
+    }
+
+    .model-label {
+      margin-top: 0.6em;
+      font-size: 1.1em;
+      color: #9fdfff;
+    }
+
+    .scene-label {
+      text-align: center;
+      margin-top: 1em;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #28b7e2;
+      letter-spacing: 0.8px;
+    }
+
+    @media (max-width: 1000px) {
+      .comparison-row {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .comparison-row > div {
+        width: 95vw;
+      }
+    }
