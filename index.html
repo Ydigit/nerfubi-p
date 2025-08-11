@@ -1,131 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NERFUBI – NeRF Model Comparison</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
-        "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js",
-        "three/examples/jsm/loaders/PLYLoader": "https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js"
-      }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NERFUBI – NeRF Model Comparison</title>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- (mantive o importmap se precisares noutras páginas) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.154.0/build/three.module.js",
+      "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js",
+      "three/examples/jsm/loaders/PLYLoader": "https://unpkg.com/three@0.154.0/examples/jsm/loaders/PLYLoader.js"
     }
-    </script>
+  }
+  </script>
+
+  <!-- pequenos estilos para as tabs -->
+  <style>
+    .scene-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:1rem 0}
+    .scene-tabs .tab{padding:.4rem .8rem;border:1px solid #3a444a;border-radius:.5rem;background:#111;color:#cfeaf3;cursor:pointer}
+    .scene-tabs .tab.active{background:#19343b;color:#9fe1ef;font-weight:700}
+    .video-row.header{font-weight:700;opacity:.9}
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>NERFUBI</h1>
-            <p class="subtitle">Neural Radiance Fields for UAV-Based Infrastructure Mapping</p>
-        </div>
+<header>
+  <div class="header-content">
+    <h1>NERFUBI</h1>
+    <p class="subtitle">Neural Radiance Fields for UAV-Based Infrastructure Mapping</p>
+  </div>
+  <nav>
+    <a href="images.html" target="_blank">Images</a>
+    <a href="index.html">Videos</a>
+    <a href="49731_66.pdf" download>Download PDF</a>
+  </nav>
+</header>
 
-        <nav>
-            <a href="images.html" target="_blank">Images</a>
-            <a href="index.html">Videos</a>
-            <a href="49731_66.pdf" download>Download PDF </a>
+<main>
 
-        </nav>
+<section id="intro">
+  <h2>About the Project</h2>
+<p>
+  <strong>NERFUBI</strong> is a research project developed by 
+  <a href="https://www.linkedin.com/in/leonardo-gon%C3%A7alves-0869631b1/">Leonardo Adolfo Gonçalves</a>, 
+  under the supervision of 
+  <a href="https://cienciavitae.pt/0515-7E9C-B97F" target="_blank" rel="noopener noreferrer">
+    Professor Maria Manuela de Sousa
+  </a>, 
+  as part of his academic work at the Universidade da Beira Interior. 
+  The project explores <em>Neural Radiance Fields</em> (NeRF) techniques for UAV-based infrastructure mapping, 
+  focusing on the training, evaluation, and visual comparison of multiple NeRF variants using real drone-captured datasets.
+</p>
+</section>
+<section id="nerfexpl">
+  <h2>What are NeRFs</h2>
+  <p>
+    <em>Neural Radiance Fields</em> (NeRFs) are a deep learning technique for synthesizing novel views of a 3D scene from a set of 2D images. 
+    Instead of storing explicit geometry, a NeRF trains a neural network to model the scene as a continuous function that maps a 3D point and a viewing direction to color and density values.
+  </p>
+  <img src="models/pipeline.png">
+  <p>
+    This representation enables highly realistic view synthesis, capturing fine details and complex lighting effects. 
+    By sampling and integrating these values along virtual camera rays — a process known as <strong>volume rendering</strong> — NeRFs can generate photorealistic images from viewpoints never seen during training.
+  </p>
+  <p>
+    While traditional NeRFs can be computationally expensive to train and render, modern variants introduce optimizations in encoding, sampling, and data structures, 
+    making them suitable for real-time applications and large-scale outdoor scenes.
+  </p>
+</section>
 
 
-    </header>
 
-    
-    <main>
+  <section id="videos">
+    <h2>Video Comparisons</h2>
+
+    <!-- Tabs para escolher a cena -->
+    <div class="scene-tabs">
+      <button class="tab active" data-scene="1">Scene 1 – UBI</button>
+      <button class="tab" data-scene="2">Scene 2 – Plane</button>
+      <button class="tab" data-scene="3">Scene 3 – Tower</button>
+      <button class="tab" data-scene="4">Scene 4 – Church</button>
+    </div>
+
+    <div class="video-comparison-table">
+      <!-- Cabeçalho dos modelos -->
+      <div class="video-row header">
+        <div><strong>Nerfacto</strong></div>
+        <div><strong>Instant-NGP</strong></div>
+        <div><strong>NeRF-SH</strong></div>
+      </div>
+
+      <!-- Cena 1 -->
+      <div class="video-row" data-scene="1">
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfacto-thumb.png" data-src="videos/nerfacto6fase_uno.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/instant-ngp-thumb.png" data-src="videos/instant-6fase_uno.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfsh-thumb.png" data-src="videos/nerfsh-6fase_uno.mp4"></video>
+      </div>
+
+      <!-- Cena 2 -->
+      <div class="video-row" data-scene="2">
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfacto-thumb.png" data-src="videos/nerfactoAviao2Min.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/instant-ngp-thumb.png" data-src="videos/instant-Aviao2Min.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfsh-thumb.png" data-src="videos/nerfsh-Aviao2Min.mp4"></video>
+      </div>
+
+      <!-- Cena 3 -->
+      <div class="video-row" data-scene="3">
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfacto-thumb.png" data-src="videos/nerfactoTorre.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/instant-ngp-thumb.png" data-src="videos/instant-torrestantonio.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfsh-thumb.png" data-src="videos/nerfsh-TorreStAntonio.mp4"></video>
+      </div>
+
+      <!-- Cena 4 -->
+      <div class="video-row" data-scene="4">
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfacto-thumb.png" data-src="videos/nerfacoIgreja.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/instant-ngp-thumb.png" data-src="videos/instant-igrejaUBI.mp4"></video>
+        <video class="cmp-video" muted playsinline loop preload="none"
+               poster="images/nerfsh-thumb.png" data-src="videos/nerfsh-igrejaUBI.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="models" aria-labelledby="models-title">
+  <h2 id="models-title">Models Used</h2>
+
+  <div class="model-grid">
+    <!-- Nerfacto -->
+    <article class="model-card">
+      
+      <h3>Nerfacto</h3>
+      <img src="models/nerfacto-workflow.png" alt="Nerfacto Pipeline">
+      <p>
+        Nerfacto is a modular and op-
+        timized NeRF variant developed within the Nerfstudio framework. It com-
+        bines ideas from multiple recent works to improve sampling efficiency, sup-
+        port large-scale outdoor scenes, and adapt to real-world image variability. Its
+        architecture is inspired by Mip-NeRF 360 [23] but simplifies and replaces key
+        components for better speed and robustness.
+      </p>
+      <ul>
+        <li>Efficient sampling with <strong>proposal networks</strong> (256 → 96 → 48 samples per ray).</li>
+        <li>Uses <strong>Multi-Resolution Hash Encoding</strong> from Instant-NGP.</li>
+        <li>Applies <strong>L∞ scene contraction</strong> for large-scale outdoor scenes.</li>
+        <li>Appearance embeddings for illumination robustness.</li>
+      </ul>
+      <img src="models/HashEnconding.png" alt="Multi-Resolution Hash Encoding" loading="lazy">
+      <p>Multi-Resolution Hash Encoding: Maps 3D points into multiple resolution grids using hashed feature tables.
+         Coarse levels capture global structure, fine levels capture details, enabling high-quality reconstruction with reduced memory.</p>
+      <img src="models/SceneContraction.png" alt="L∞ Scene Contraction" loading="lazy">
+      <p>
+        L∞ Scene Contraction: Transforms unbounded 3D coordinates into a finite cube aligned with voxel grids, preserving spatial relations and improving memory efficiency for large-scale scenes.
+      </p>
+      <p class="tagline">Balanced for UAV datasets — good quality with moderate training time.</p>
+    </article>
+
+    <!-- Instant-NGP -->
+    <article class="model-card">
         
+        <h3>Instant-NGP</h3>
+        <img src="models/Instant-ngp-pipeline.png" alt="Instant-NGP pipeline" loading="lazy">
+        <p>Instant-NGP Pipeline: Combines hash encoding, a compact CUDA-accelerated MLP, and an occupancy grid to train NeRFs in seconds.</p> 
+        <ul>
+        <li>Uses <strong>Multi-Resolution Hash Encoding</strong> (same core idea as Nerfacto).</li>
+        <li>Tiny MLP (2×64) fully CUDA-accelerated.</li>
+        <li><strong>Occupancy grid</strong> to skip empty space.</li>
+        <li>Trains in minutes or even seconds while keeping high visual quality.</li>
+      </ul>
+      <img src="models/instant.png" alt="Instant" loading="lazy">
+      <p>
+        Multi-Resolution Hash Encoding (see Nerfacto section)
+        Instead of using Sinusoidal positional encodings as shown in Table 1
+        of the WG1N101056, ISO/IEC JTC 1/SC 29/WG 1 2025 JPEG Task Force Draft Report, Instant-NGP uses a compact
+        multi-resolution hash encoding, detailed earlier in the Nerfacto subsec-
+        tion. This encoding provides rich geometric features
+        with low memory cost and is a key factor in Instant-NGP’s speed.
+      </p>
+      <p class="tagline">Fast Training - Optimized for extreme training speed.</p>
+    </article>
 
-        <section id="videos">
-            <h2>Video Comparisons</h2>
-            <div class="video-comparison-table">
-                <!-- Cabeçalho dos modelos -->
-                <div class="video-row header">
-                    <div> <strong>Nerfacto</strong> </div>
-                    <div> <strong>Instant-NGP</strong> </div>
-                    <div> <strong>NeRF-SH</strong> </div>
-                </div>
-                <!-- Cena 1 -->
-                <div class="video-row">
-                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
-                        <source src="videos/nerfacto6fase_uno.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
-                        <source src="videos/instant-6fase_uno.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
-                        <source src="videos/nerfsh-6fase_uno.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- Cena 2 -->
-                <div class="video-row">
-                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
-                        <source src="videos/nerfactoAviao2Min.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
-                        <source src="videos/instant-Aviao2Min.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
-                        <source src="videos/nerfsh-Aviao2Min.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- Cena 3 -->
-                <div class="video-row">
-                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
-                        <source src="videos/nerfactoTorre.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
-                        <source src="videos/instant-torrestantonio.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
-                        <source src="videos/nerfsh-TorreStAntonio.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <!-- Cena 4 -->
-                <div class="video-row">
-                    <video muted playsinline poster="images/nerfacto-thumb.png" autoplay loop>
-                        <source src="videos/nerfacoIgreja.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/instant-ngp-thumb.png" autoplay loop>
-                        <source src="videos/instant-igrejaUBI.mp4" type="video/mp4">
-                    </video>
-                    <video muted playsinline poster="images/nerfsh-thumb.png" autoplay loop>
-                        <source src="videos/nerfsh-igrejaUBI.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- NeRF-SH -->
+    <article class="model-card">
+        <h3>NeRF-SH</h3>
+        <img src="models/nerf-sh-training.png" alt="NeRF-SH training" loading="lazy">
+        In NeRF-SH, color is not predicted directly by the MLP as RGB values.
+        Instead, the network outputs SH coefficients at each spatial location.
+        This enables efficient and continuous modeling of view-dependent ap-
+        pearance without explicitly passing the viewing direction to the MLP
+        during inference
+        <ul>
+            <li>Predicts <strong>Spherical Harmonics coefficients</strong> for view-dependent color.</li>
+            <li>No view direction input in the MLP.</li>
+            <li>Converted to <strong>PlenOctree</strong> for real-time rendering.</li>
+            <li>Editable representation (direct SH/density tuning).</li>
+            <p>NeRF-SH Training: Predicts spherical harmonics coefficients for view-dependent color, along with volumetric density, without directly taking viewing direction as MLP input.</p>
+            <img src="models/conversion-to-plenOctree.png" alt="Conversion to PlenOctree" loading="lazy">
 
-    <footer>
-        <p>&copy; 2025 NERFUBI Project &mdash; <a href="https://github.com/Ydigit" target="_blank">GitHub</a></p>
-    </footer>
+      </ul>
+      <p class="tagline">Best suited for interactive and real-time visualization.</p>
+    </article>
+  </div>
+</section>
+
+
+</main>
+
+<footer>
+  <p>&copy; 2025 NERFUBI Project &mdash; <a href="https://github.com/Ydigit" target="_blank">GitHub</a></p>
+</footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const videosSection = document.getElementById('videos');
-    const videos = videosSection.querySelectorAll('video');
-    let played = false;
+/*  Lazy-load com limite de concorrência + sincronização por linha + tabs por cena  */
+document.addEventListener("DOMContentLoaded", () => {
+  const rows = [...document.querySelectorAll(".video-row[data-scene]")];
+  const tabs = [...document.querySelectorAll(".scene-tabs .tab")];
 
-    function playAllVideos() {
-        if (played) return;
-        videos.forEach(video => {
-            video.currentTime = 0;
-            video.play();
+  // ===== Tabs (mostra só 1 cena de cada vez) =====
+  const showScene = (n) => {
+    rows.forEach(r => {
+      const on = r.dataset.scene === String(n);
+      r.style.display = on ? "" : "none";
+      if (!on) {
+        r.querySelectorAll("video").forEach(v => {
+          v.pause();
+          v.removeAttribute("src");
+          v.load();
+          v.dataset.loaded = "";
         });
-        played = true;
-    }
+      }
+    });
+  };
+  tabs.forEach(b => b.addEventListener("click", () => {
+    tabs.forEach(t => t.classList.toggle("active", t === b));
+    showScene(b.dataset.scene);
+  }));
+  showScene(1); // cena inicial
 
-    // Usa IntersectionObserver para detetar quando a secção aparece no ecrã
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                playAllVideos();
-            }
-        });
-    }, { threshold: 0.3 });
+  // ===== Lazy-load de vídeos com máximo de 2 downloads =====
+  const maxConcurrent = 2;
+  let activeLoads = 0;
+  const queue = [];
 
-    observer.observe(videosSection);
+  const mountSrc = (v) => {
+    if (v.dataset.loaded || !v.dataset.src) return;
+
+    const doLoad = () => {
+      activeLoads++;
+      v.src = v.dataset.src;
+      v.dataset.loaded = "1";
+      v.load();
+      v.addEventListener("canplay", () => { v.play().catch(()=>{}); }, { once:true });
+      v.addEventListener("loadeddata", () => {
+        activeLoads = Math.max(0, activeLoads - 1);
+        if (queue.length) queue.shift()();
+      }, { once:true });
+    };
+
+    activeLoads < maxConcurrent ? doLoad() : queue.push(doLoad);
+  };
+
+  const unmountSrc = (v) => {
+    if (!v.dataset.loaded) return;
+    v.pause();
+    v.removeAttribute("src");
+    v.load(); // liberta buffer
+    v.dataset.loaded = "";
+  };
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) mountSrc(v);
+      else unmountSrc(v);
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll("video.cmp-video").forEach(v => io.observe(v));
+
+  // ===== Sincronização por linha (o 1º da linha é mestre) =====
+  rows.forEach(row => {
+    const vs = [...row.querySelectorAll("video")];
+    if (vs.length < 2) return;
+    const master = vs[0];
+
+    master.addEventListener("play",  () => vs.slice(1).forEach(v => v.play().catch(()=>{})));
+    master.addEventListener("pause", () => vs.slice(1).forEach(v => v.pause()));
+    master.addEventListener("seeking", () => {
+      const t = master.currentTime;
+      vs.slice(1).forEach(v => { if (Math.abs(v.currentTime - t) > 0.08) v.currentTime = t; });
+    });
+  });
 });
 </script>
 </body>
