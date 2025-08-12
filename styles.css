@@ -7,7 +7,7 @@ body {
 
 header {
     background: #23272a;
-    padding: 2rem 0 1rem 0;
+    padding: 1.25rem 0; /* consistente */
     text-align: center;
     border-bottom: 2px solid #31363b;
 }
@@ -166,19 +166,7 @@ footer a:hover {
 }
 
 
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 2em; /* espaçamento entre links */
-    margin-top: 1em;
-}
 
-nav a {
-    text-decoration: none;
-    color: #aeeaff;
-    font-weight: bold;
-    font-size: 1.1em;
-}
 .model-grid {
   display: flex;
   flex-direction: column; /* vertical stacking */
